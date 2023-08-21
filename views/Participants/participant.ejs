@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" title="CHIS">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Participants</title>
+    <link rel="icon" href="chis.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reg.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="table-container">
+      <main class="table">
+        <section class="table__header">
+          <div class="container">
+            <div class="btn">
+              <a href="/addparticipant"
+                ><i class="fas fa-users"></i>Participants</a
+              >
+            </div>
+          </div>
+        </section>
+        <section class="table__body">
+          <table>
+            <thead>
+              <tr>
+                <th>ID<span class="icon-arrow">&UpArrow;</span></th>
+                <th>First Name <span class="icon-arrow">&UpArrow;</span></th>
+                <th>Middle Name <span class="icon-arrow">&UpArrow;</span></th>
+                <th>Last Name <span class="icon-arrow">&UpArrow;</span></th>
+                <th>Gender <span class="icon-arrow">&UpArrow;</span></th>
+                <th>Phone Number <span class="icon-arrow">&UpArrow;</span></th>
+                <th>Nationality <span class="icon-arrow">&UpArrow;</span></th>
+                <th>PWD <span class="icon-arrow">&UpArrow;</span></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="clubs-data">
+              <% data.forEach(item => { %>
+              <tr>
+                <td><%= item.ParticipantId %></td>
+                <td><%= item.FirstName %></td>
+                <td><%= item.MiddleName %></td>
+                <td><%= item.LastName %></td>
+                <td><%= item.Gender %></td>
+                <td><%= item.PhoneNumber %></td>
+                <td><%= item.Nationality %></td>
+                <td><%= item.WithDisability %></td>
+                <td>
+                  <button data-modal-target="#modal" data-id="<%= item.ParticipantId %>" class="row-button">
+                    Edit
+                  </button>
+                  <div class="modal" id="modal">
+                    <div class="container1">
+                      <div class="title">Participants Registration</div>
+                      <div class="content">
+                        <form id="edit-form" method="post">
+                          <div class="user-details">
+                            <div class="input-box">
+                              <span class="details">First Name</span>
+                              <input
+                                type="text"
+                                placeholder="Enter First name"
+                                name="FirstName"
+                                required
+                              />
+                            </div>
+                            <div class="input-box">
+                              <span class="details">Last Name</span>
+                              <input
+                                type="text"
+                                name="LastName"
+                                placeholder="Enter last name"
+                                required
+                              />
+                            </div>
+                            <div class="input-box">
+                              <span class="details">Father Name</span>
+                              <input
+                                type="text"
+                                name="MiddleName"
+                                placeholder="Enter father name"
+                                required
+                              />
+                            </div>
+                            <div class="input-box">
+                              <span class="details">Mother Name</span>
+                              <input
+                                type="text"
+                                name="Mname"
+                                placeholder="Enter mother name"
+                                required
+                              />
+                            </div>
+                            <div class="input-box">
+                              <span class="details">First Name(Arabic)</span>
+                              <input
+                                type="text"
+                                placeholder="Enter first name"
+                                required
+                              />
+                            </div>
+                            <div class="input-box">
+                              <span class="details">Last Name(Arabic)</span>
+                              <input
+                                type="text"
+                                placeholder="Enter last name"
+                                required
+                              />
+                            </div>
+                            <div class="input-box">
+                              <span class="details">Father Name(Arabic)</span>
+                              <input
+                                type="text"
+                                placeholder="Enter father name"
+                                required
+                              />
+                            </div>
+                            <div class="input-box">
+                              <span class="details">Mother Name(Arabic)</span>
+                              <input
+                                type="text"
+                                placeholder="Enter mother name"
+                                required
+                              />
+                            </div>
+
+                            <div class="input-box">
+                              <span class="details">Date of Birth</span>
+                              <input
+                                type="date"
+                                name="DateOfBirth"
+                                placeholder="Enter birth date"
+                                required
+                              />
+                            </div>
+
+                            <div class="input-box">
+                              <span class="details">Phone Number</span>
+                              <input
+                                type="text"
+                                name="PhoneNumber"
+                                placeholder="Enter number"
+                                required
+                              />
+                            </div>
+
+                            <div class="input-box">
+                              <span class="details">Address</span>
+                              <input
+                                type="text"
+                                placeholder="Enter address"
+                                required
+                              />
+                            </div>
+
+                            <div class="wrapper" id="wrapper">
+                              <div class="input-box" id="input-box">
+                                <span class="details">Nationality</span>
+                              </div>
+                              <div class="select-btn" id="select-btn">
+                                <span id="NatLabel" >Select a Nationality</span>
+                                <i class="uil uil-angle-down"></i>
+                              </div>
+                              <div class="content-dropdown">
+                                <div class="search">
+                                  <i class="uil uil-search"></i>
+                                  <input
+                                    spellcheck="false"
+                                    type="text"
+                                    id="input"
+                                    name="Nationality"
+                                    placeholder="Search"
+                                  />
+                                </div>
+                                <ul class="options" id="options"></ul>
+                              </div>
+                            </div>
+
+                            <div class="wrapper" id="wrapper1">
+                              <div class="input-box" id="input-box1">
+                                <span class="details">District</span>
+                              </div>
+                              <div class="select-btn" id="select-btn1">
+                                <span>Select a District</span>
+                                <i class="uil uil-angle-down"></i>
+                              </div>
+                              <div class="content-dropdown">
+                                <div class="search">
+                                  <i class="uil uil-search"></i>
+                                  <input
+                                    spellcheck="false"
+                                    type="text"
+                                    id="input1"
+                                    placeholder="Search"
+                                  />
+                                </div>
+                                <ul class="options" id="options1"></ul>
+                              </div>
+                            </div>
+
+                            <div class="wrapper" id="wrapper_cadaster">
+                              <div class="input-box" id="input_box_cadaster">
+                                <span class="details">Cadaster</span>
+                              </div>
+                              <div class="select-btn" id="select_btn_cadaster">
+                                <span>Select a Cadaster</span>
+                                <i class="uil uil-angle-down"></i>
+                              </div>
+                              <div class="content-dropdown">
+                                <div class="search">
+                                  <i class="uil uil-search"></i>
+                                  <input
+                                    spellcheck="false"
+                                    type="text"
+                                    id="input_cadaster"
+                                    placeholder="Search"
+                                  />
+                                </div>
+                                <ul class="options" id="options_cadaster"></ul>
+                              </div>
+                            </div>
+
+                            <div class="wrapper" id="wrapper_project">
+                              <div class="input-box" id="input_box_project">
+                                <span class="details">Projects</span>
+                              </div>
+                              <div class="select-btn" id="select_btn_project">
+                                <span>Select a Project</span>
+                                <i class="uil uil-angle-down"></i>
+                              </div>
+                              <div class="content-dropdown">
+                                <div class="search">
+                                  <i class="uil uil-search"></i>
+                                  <input
+                                    spellcheck="false"
+                                    type="text"
+                                    id="input_project"
+                                    placeholder="Search"
+                                  />
+                                </div>
+                                <ul class="options" id="options_project"></ul>
+                              </div>
+                            </div>
+
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="WithDisability"
+                                id="WithDisability"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="WithDisability"
+                              >
+                                WithDisability
+                              </label>
+                            </div>
+
+                            <div class="gender-details">
+                              <input type="radio" name="Gender" value="Male" id="dot-1" />
+                              <input type="radio" name="Gender" value="Female" id="dot-2" />
+                              <span class="gender-title">Gender</span>
+                              <div id="genderButton" class="category">
+                                <label for="dot-1">
+                                  <span class="dot one"></span>
+                                  <span class="gender">Male</span>
+                                </label>
+                                <label for="dot-2">
+                                  <span class="dot two"></span>
+                                  <span class="gender">Female</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="button">
+                            <input type="submit" value="Register" />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="overlay"></div>
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+
+            <script src="script.js"></script>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script>
+     const data = JSON.parse('<%- JSON.stringify(data) %>');
+    const editButtons = document.querySelectorAll('.row-button');
+   
+    
+    editButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const participantId = button.getAttribute('data-id');
+     
+        const participant = data.find(p => p.ParticipantId === parseInt(participantId));
+       
+        populateEditForm(participant);
+      });
+    });
+    // Edit each record in the table
+    function populateEditForm(participant) {
+    if (participant) {
+      const editForm = document.getElementById('edit-form');
+      //Gender
+     
+      const maleRadio = document.getElementById("dot-1");
+        const femaleRadio = document.getElementById("dot-2");
+
+        if (participant.Gender === "Male") {
+      maleRadio.checked = true;
+      femaleRadio.checked = false;
+    } else if (participant.Gender === "Female") {
+      maleRadio.checked = false;
+      femaleRadio.checked = true;
+    }
+      
+     
+    //PWD
+    const checkbox = document.getElementById('WithDisability');
+    checkbox.checked = participant.WithDisability === 1;
+    editForm.querySelector('[name="WithDisability"]').value = participant.WithDisability;
+    checkbox.addEventListener("click",()=>{
+      if (checkbox.checked) {
+    editForm.querySelector('[name="WithDisability"]').value = '1';
+  } else {
+    editForm.querySelector('[name="WithDisability"]').value = undefined; // Set to an appropriate value
+  }
+    });
+
+     // PWD.checked = participant.WithDisability === 1;
+      //PWD.addEventListener("click",()=>{
+     // var valueToSend = PWD.checked ? 1 : 0;
+    //  editForm.querySelector('[name="WithDisability"]').value=valueToSend;
+      //})
+      
+   
+  
+
+      // FirstName LastName Mname DOB PhNbr
+      editForm.querySelector('[name="FirstName"]').value = participant.FirstName;
+      editForm.querySelector('[name="LastName"]').value = participant.LastName;
+      editForm.querySelector('[name="MiddleName"]').value = participant.MiddleName;
+      editForm.querySelector('[name="PhoneNumber"]').value = participant.PhoneNumber;
+      editForm.querySelector('[name="DateOfBirth"]').value =participant.DateOfBirth;
+       //if nationality not selected
+       editForm.querySelector('[name="Nationality"]').value=participant.Nationality;
+       //Nationality
+        document.getElementById('NatLabel').innerText=participant.Nationality;
+        document.getElementById("options").addEventListener("click",()=>{
+       editForm.querySelector('[name="Nationality"]').value  =document.getElementById("select-btn").innerText
+      })
+      //Post
+      editForm.setAttribute('action', `http://localhost:3000/update/${participant.ParticipantId}`);
+    }
+  };
+
+  </script>
+  
+</html>

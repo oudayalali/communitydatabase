@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+  rel="stylesheet"
+/>
+    <title>Community Database</title>
+  </head>
+  <!-- Intro -->
+  <div class="intro">
+    <h1 class="logo-header">
+      <span class="logo">Community&nbsp;</span><span class="logo">Health&nbsp;</span><span class="logo">Club</span>
+    </h1>
+  </div>
+  <body>
+    <!-- Loading -->
+    <div id="loader" class="loader">
+      <div class="flex_">
+        <div class="load"></div>
+      </div>
+      <div class="load-text">Loading...</div>
+    </div>
+   
+
+    <!--Content of the website-->
+    <div class="cont">
+      <section>
+        <!-- Container to heading and Web Apps cards blocks -->
+        <div class="container max-w-6xl mx-auto text-center pt-12 md:pt-0">
+          <!-- Heading -->
+          <h2 class="text-4xl font-bold p-4 text-amber-100 text-center">
+            Community Health Club
+          </h2>
+          <!-- Web app cards Container -->
+       
+     
+          <div class="container">
+            <div class="row d-flex justify-content-center align-items-center ">
+              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                  <div class="card-body p-5 text-center">
+        
+                    <div class="mb-md-5 mt-md-4 pb-5">
+        <form action="http://localhost:3000/login" method="post">
+          <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+          <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+          <div class="form-outline form-white mb-4">
+            <input type="text" name="username" placeholder="Username" id="username" class="form-control form-control-lg" required />
+            <label class="form-label" for="typeEmailX">Username</label>
+          </div>
+
+          <div class="form-outline form-white mb-4">
+            <input type="password" name="password" placeholder="Password" id="password" class="form-control form-control-lg" required />
+            <label class="form-label" for="typePasswordX">Password</label>
+          </div>
+          <button class="btn btn-outline-light btn-lg px-5" type="submit" value="Login">Login</button>
+        </form>
+                    </div>
+        
+        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+      
+      </section>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+></script>
+  </body>
+</html>

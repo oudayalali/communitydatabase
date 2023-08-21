@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en" title="CHIS">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clubs</title>
+    <link rel="icon" href="chis.jpg">
+    <link rel="stylesheet" href="../Clubs/style.css">
+    <link rel="stylesheet" href="../Clubs/edit.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  
+</head>
+
+<body>
+    <main class="table">
+        <section class="table__header">
+            <div class="container">
+                <div class="btn">
+                    
+                    <a href="http://localhost:3000/addclub"><i class="fas fa-users"></i>Clubs</a></div>
+            </div>
+     
+           
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Club ID <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Project Name <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> PHCC <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Location/PHCC <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Volunteer <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Start Date <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> End Date <span class="icon-arrow">&UpArrow;</span></th>
+                        <th></th>
+                   
+                    </tr>
+                </thead>
+                <tbody id="clubs-data">
+                  <% data.forEach(item => { %>
+                    <tr>
+                      <td><%= item.ClubId %></td>
+                      <td><%= item.ProjectName %></td>
+                      <td><%= item.phccname %></td>
+                      <td><%= item.LocationPHCC %></td>
+                      <td><%= item.full_name %></td>
+                      <td><p class="<%= item.Status === 'Onhold' ? 'status pending' : (item.Status === 'Ongoing' ? 'status delivered' : 'status cancelled') %>"><%= item.Status %></p> </td>
+                      <td><%= item.StartDate %></td>
+                      <td><%= item.EndDate %></td>
+                   
+                     
+                    
+                        <td><button data-modal-target="#modal" data-id="<%= item.ClubId %>"class="row-button"></i>Edit</button>
+                            <div class="modal" id="modal">
+                                <div class="container1">
+                                  <div class="title">Edit Club</div>
+                                  <div class="content">
+                                    <form id="edit-form" method="post">
+                                      <div class="user-details">
+                                        
+                                        <div class="wrapper" id="wrapper">
+                                          <div class="input-box" id="input-box"><span class="details">Projects</span></div>
+                                          <div class="select-btn" id="select-btn">
+                                            <span id="ProjectName">Select a Project</span>
+                                            <i class="uil uil-angle-down"></i>
+                                          </div>
+                                          <div class="content-dropdown">
+                                            <div class="search">
+                                              <i class="uil uil-search"></i>
+                                              <input spellcheck="false" type="text" id="input" name="ProjectName" placeholder="Search">
+                                            </div>
+                                            <ul class="options" id="options"></ul>
+                                          </div>
+                                        </div>
+
+                                        <div class="wrapper" id="wrapper1">
+                                            <div class="input-box" id="input-box1"><span class="details">Phcc</span></div>
+                                            <div class="select-btn" id="select-btn1">
+                                              <span id="sltphcc">Select a Phcc</span>
+                                              <i class="uil uil-angle-down"></i>
+                                            </div>
+                                            <div class="content-dropdown">
+                                              <div class="search">
+                                                <i class="uil uil-search"></i>
+                                                <input spellcheck="false" type="text" id="input1" name="phccname" placeholder="Search">
+                                              </div>
+                                              <ul class="options" id="options1"></ul>
+                                            </div>
+                                          </div>
+                                
+                                
+                                        <div class="input-box">
+                                          <span class="details">Phcc/Location</span>
+                                          <input type="text" placeholder="Enter phcc/location" name="LocationPHCC" required>
+                                        </div>
+                                
+                                        <div class="wrapper" id="wrapper_volunteers">
+                                          <div class="input-box" id="input_box_volunteers"><span class="details">Volunteers</span></div>
+                                          <div class="select-btn" id="select_btn_volunteers">
+                                            <span id="volunteerid">Select a volunteer</span>
+                                            <i class="uil uil-angle-down"></i>
+                                          </div>
+                                          <div class="content-dropdown">
+                                            <div class="search">
+                                              <i class="uil uil-search"></i>
+                                              <input spellcheck="false" type="text" id="input_volunteers" name="volunteerid" placeholder="Search">
+                                            </div>
+                                            <ul class="options" id="options_volunteers"></ul>
+                                          </div>
+                                        </div>
+                                
+                                
+                                
+                                        <div class="input-box">
+                                          <span class="details">Start Date</span>
+                                          <input type="date" placeholder="Enter start date" name="StartDate" required>
+                                      </div>
+                                
+                                      <div class="input-box">
+                                        <span class="details">End Date</span>
+                                        <input type="date" placeholder="Enter end date" name="EndDate" required>
+                                    </div></div>
+                            
+                                        <div class="button">
+                                          <input type="submit" value="Edit">
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                            
+                            
+                                </div>
+                              </div>
+                              <div id="overlay"></div>
+                          
+                          </td>
+                          
+  
+                      </tr>
+                      <% }); %>  
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="../Clubs/script.js"></script>
+</body>
+<script>
+  const data = JSON.parse('<%- JSON.stringify(data) %>');
+ const editButtons = document.querySelectorAll('.row-button');
+
+ 
+ editButtons.forEach(button => {
+   button.addEventListener('click', () => {
+     const ClubId = button.getAttribute('data-id');
+  
+     const club = data.find(p => p.ClubId === parseInt(ClubId));
+    
+     populateEditForm(club);
+   });
+ });
+ // Edit each record in the table
+ function populateEditForm(club) {
+ if (club) {
+   const editForm = document.getElementById('edit-form');
+ 
+   
+   editForm.querySelector('[name="LocationPHCC"]').value =club.LocationPHCC;
+   editForm.querySelector('[name="StartDate"]').value =club.StartDate;
+   editForm.querySelector('[name="EndDate"]').value =club.EndDate;
+  document.getElementById('ProjectName').innerText=club.ProjectName;
+  editForm.querySelector('[name="ProjectName"]').value=club.ProjectName;
+  editForm.querySelector('[name="volunteerid"]').value=club.volunteerid;
+  editForm.querySelector('[name="phccname"]').value = club.phccname;
+
+  document.getElementById("options").addEventListener("click",()=>{
+    editForm.querySelector('[name="ProjectName"]').value =document.getElementById('ProjectName').innerText;
+      })
+      document.getElementById('volunteerid').innerText=club.volunteerid;
+  document.getElementById("options_volunteers").addEventListener("click",()=>{
+    editForm.querySelector('[name="volunteerid"]').value =document.getElementById('volunteerid').innerText;
+      })
+      document.getElementById('sltphcc').innerText=club.phccname;
+  document.getElementById("options1").addEventListener("click",()=>{
+    editForm.querySelector('[name="phccname"]').value =document.getElementById('sltphcc').innerText;
+      })
+
+
+
+
+   //Post
+   editForm.setAttribute('action', `http://localhost:3000/api/club/update/${club.ClubId}`);
+ }
+};
+
+</script>
+</html>

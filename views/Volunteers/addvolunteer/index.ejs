@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="../Registration Form/images/logo-ct.png">
+
+    <title> Volunteers Registration </title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="Volunteers/addvolunteer/style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Volunteers Registration</div>
+    <div class="content">
+      <form id="volunteer-form">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" placeholder="Enter First name" name="FirstName" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" placeholder="Enter last name" name="LastName" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Father Name</span>
+            <input type="text" placeholder="Enter father name" name="MiddleName" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Mother Name</span>
+            <input type="text" placeholder="Enter mother name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">First Name(Arabic)</span>
+            <input type="text" placeholder="Enter first name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name(Arabic)</span>
+            <input type="text" placeholder="Enter last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Father Name(Arabic)</span>
+            <input type="text" placeholder="Enter father name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Mother Name(Arabic)</span>
+            <input type="text" placeholder="Enter mother name" required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Date of Birth</span>
+            <input type="date" placeholder="Enter birth date" name="DateOfBirth" required>
+        </div>
+        
+        <div class="input-box">
+          <span class="details">Phone Number</span>
+          <input type="text" placeholder="Enter number" name="PhoneNumber" required>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Address</span>
+          <input type="text" placeholder="Enter address" name="Address" required>
+        </div>
+        
+        <div class="wrapper" id="wrapper">
+          <div class="input-box" id="input-box"><span class="details">Nationality</span></div>
+          <div class="select-btn" name="Nationality" id="select-btn">
+            <span>Select a Nationality</span>
+            <i class="uil uil-angle-down"></i>
+          </div>
+          <div class="content-dropdown">
+            <div class="search">
+              <i class="uil uil-search"></i>
+              <input spellcheck="false" type="text" id="input" placeholder="Search">
+            </div>
+            <ul class="options" id="options"></ul>
+          </div>
+        </div>
+
+        <div class="wrapper" id="wrapper1">
+          <div class="input-box" id="input-box1"><span class="details">Supervisor</span></div>
+          <div class="select-btn" id="select-btn1">
+            <span>Select a Supervisor</span>
+            <i class="uil uil-angle-down"></i>
+          </div>
+          <div class="content-dropdown">
+            <div class="search">
+              <i class="uil uil-search"></i>
+              <input spellcheck="false" type="text" id="input1" placeholder="Search">
+            </div>
+            <ul class="options" id="options1"></ul>
+          </div>
+        </div>
+
+
+
+        <div class="input-box">
+          <span class="details">Start Date</span>
+          <input type="date" placeholder="Enter start date" name="StartDate" required>
+      </div>
+
+      <div class="input-box">
+        <span class="details">End Date</span>
+        <input type="date" placeholder="Enter end date" name="EndDate" required>
+    </div>
+          <div class="gender-details">
+            <input type="radio" name="gender" value="Male" id="dot-1">
+          <input type="radio" name="gender"  value="Female" id="dot-2">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          </div>
+         
+        </div>
+      </div>
+      
+
+        
+
+      
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+<script src="Volunteers/addvolunteer/script.js"></script>
+</body>
+</html>
